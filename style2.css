@@ -1,0 +1,28 @@
+body{
+    background-color: aqua;
+}
+Button,h4,p{
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 5px; /* Reduced the gap between tiles */
+    margin:20px auto; /* Center the grid horizontally */
+    max-width: 220px; 
+}
+
+.tile {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc; 
+}

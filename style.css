@@ -1,0 +1,14 @@
+body{
+    background-color: aquamarine;
+}
+
+h5, h4, p{
+    display: flex;
+    justify-content: center;
+    
+}
+.Info-joc{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+}
