@@ -10,11 +10,20 @@ btnmostrarInstrucions.addEventListener("click", MostraLesInstruccions);
 //FUNCTIONS
 //A broadcast channel to communicate between two windows
 const broadcastChannel = new BroadcastChannel("my_channel");
+broadcastChannel.onmessage = (event) => {
+    if (event.data.type === 'updateGameStatus') {
+        const playerName = event.data.playerName;
+        const points = event.data.points;
+        
+        document.getElementById("nomJugador").textContent = playerName;
+        document.getElementById("punts").textContent = `Punts: ${points}`;
+    }
+};
 
 
 //A funtion to open the instructions window
 function MostraLesInstruccions() {
-    finestra = window.open("instructions.html", " ", "width=400,height=400");
+    finestra = window.open("instructions.html", "Instruccions", "width=400,height=400");
   }
   
 function updatePointsDisplay() {
@@ -89,8 +98,8 @@ function esPartidaFinalitzada() {
     if (numParellTrobats === parellsTotal) {
         localStorage.removeItem('esPartidaComenzada');
         sessionStorage.setItem('maxPunts', points); // Store final points
-        window.location.href = "finalizada.html"; // Redirect to game finished page
-        //window.location.assign = "finalizada.html"; No funciona
+        //window.location.href = "finalizada.html"; // Redirect to game finished page
+        window.location.assign ("finalizada.html");
     }
 }
 

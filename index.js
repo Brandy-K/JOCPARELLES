@@ -12,7 +12,6 @@ let finestra;
 
 //a Broadcast to communicate between the windows
 const broadcastChannel = new BroadcastChannel("my_channel");
-  
 
 function comencarPartida(){
     if(nomJugadorObj.value){
